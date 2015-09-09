@@ -1,0 +1,111 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>Archetype Created Web Application</display-name>
+
+    <filter>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>filters.SecurityFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FilterEncoding</filter-name>
+        <filter-class>filters.FilterEncoding</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterEncoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controllers.LoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>controllers.LogoutController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TitleController</servlet-name>
+        <servlet-class>controllers.TitleController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TitleController</servlet-name>
+        <url-pattern>/title</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentsPageController</servlet-name>
+        <servlet-class>controllers.StudentsPageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentsPageController</servlet-name>
+        <url-pattern>/students</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DisciplinesPageController</servlet-name>
+        <servlet-class>controllers.DisciplinesPageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisciplinesPageController</servlet-name>
+        <url-pattern>/disciplines</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SemesterPageController</servlet-name>
+        <servlet-class>controllers.SemesterPageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SemesterPageController</servlet-name>
+        <url-pattern>/semesters</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateSemesterTable</servlet-name>
+        <servlet-class>services.TableCreateSemester</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateSemesterTable</servlet-name>
+        <url-pattern>/createSemesterTable</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetCurrentRoleOfUser</servlet-name>
+        <servlet-class>services.SetCurrentRoleOfUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetCurrentRoleOfUser</servlet-name>
+        <url-pattern>/setCurrentRoleOfUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RestoreAllData</servlet-name>
+        <servlet-class>services.RestoreAllData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RestoreAllData</servlet-name>
+        <url-pattern>/restoreAll</url-pattern>
+    </servlet-mapping>
+
+</web-app>
